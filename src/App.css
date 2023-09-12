@@ -1,38 +1,138 @@
+/* Style for the main container */
 .App {
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Style for the game title */
+h1 {
+  font-size: 2em;
+  margin-bottom: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Style for the hangman figure */
+.hangman pre {
+  font-family: monospace;
+  font-size: 16px;
+  white-space: pre-wrap;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Style for the word display */
+.word {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+/* Style for individual letters in the word */
+.letter {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 1.2em;
+  margin: 0 5px;
+  border-bottom: 2px solid #333;
+}
+
+/* Style for guessed letters */
+.letter.guessed {
+  border-bottom: 2px solid #00c853; /* Change the color to indicate guessed letters */
+}
+
+/* Style for placeholders */
+.letter.placeholder {
+  color: #aaa;
+}
+
+/* Style for the keyboard */
+.keyboard {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+/* Style for letter buttons */
+.letter-button {
+  font-size: 1.5em;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Style for letter buttons on hover */
+.letter-button:hover {
+  background-color: #0056b3;
+}
+
+/* Style for the game status message */
+.game-status {
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+/* Style for the restart button */
+.restart-button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+/* Style for the restart button on hover */
+.restart-button:hover {
+  background-color: #388e3c;
+}
+
+.help-button {
+  font-size: 1.2em;
+  padding: 10px 20px;
+  background-color: #c3e30f;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 5px;
+}
+
+.help-button:Hover {
+  background-color: #a8bd1e;
+
+}
+
+.Heading-title {
+  font-size: 36px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #dcf806;
+  position: relative;
+  animation: moveIn 1s ease-in-out forwards, colorChange 2s ease-in-out infinite alternate;
+}
+
+@keyframes moveIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-50px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+      color: #0cc0f7;
+  }
+  100% {
+      color: #ff5733; /* Change to your desired color */
   }
 }
